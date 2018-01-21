@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<title>Hallway</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body {
+    background-repeat: no-repeat;
+    background-image:url(img/executivehall.png);
+    background-size: 1280px 800px;
+    }
+.info{
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 40px;
+    }
+    
+a:link{
+    text-decoration: none;
+  } 
+#narration{
+    position: absolute;
+    margin-top: 345px;
+    margin-left:20px;    
+    }
+    
+#narration img{
+    position: absolute;
+   width: 1000px;
+    height: 190px;
+    margin-top: 160px;
+    z-index: -1;
+    }
+    
+#narration p{
+	color: #b8b6dd;    
+   font-size: 1.1em;
+    line-height: 1.6em;
+    animation: fadein 7s;
+    width: 830px;
+    padding-left: 90px;
+    margin-top: 205px;
+    z-index: 1;
+    animation: fadein 7s;
+    text-align: left;
+    }
+    
+/***Text fades in***/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#nextbutton{
+    position: absolute; 
+    margin-left: 1050px;
+    margin-top: 600px;
+    }
+#nextbutton img{
+    width: 70px;
+    }
+</style>
+    
+<script>    
+var click=0;
+
+function sequence1() {
+	click++;
+	
+    if (click == 1) {
+	document.getElementById("text1").innerHTML= " <br>I get to the right floor and find the gold, shiny plaque that spells ‘Hospital Director’ in ugly, bold lettering. I try the door and it opens with a click.";
+    document.getElementById('nextbutton').style.display = 'block';}
+}
+</script>
+    
+</head>
+<body>
+    <div class="info">
+        <p>Mysterious Hallway</p>
+    </div>
+<!-- Narration-->
+    <div id="narration">
+        <img src="img/textbox_dark.png" alt="textbox">
+        <p id="text1" onclick="sequence1();">
+           <br>
+            I look up the floor directory because the receptionist is hopeless. Her face is frozen into place with an awful smile that looks predatory.<br><br>
+        </p>
+    </div>
+	<div id="nextbutton" style="display:none">
+        <a href= "office.html"><img src="img/right_arrow.png" alt="next button"> </a>
+    </div>
+	<audio autoplay loop>
+		<source src="audio/fatal1.mp3" type="audio/mp3">
+	</audio>
+</body>       
+</html>
+
+
+
+
+
+

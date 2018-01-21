@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<title>???</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    width: 1280px;
+    height: 800px;
+    }
+body {
+    background-repeat: no-repeat;
+    background-color:#000000;
+    background-size: 1280px 800px
+    }
+    
+  a:link{
+    text-decoration: none;
+  } 
+#narration{
+    width: 1000px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 70px;
+    } 
+#narration img{
+    position: absolute;
+    width: 1000px;
+    margin-left: 50px;
+    z-index: -1;
+    }
+#narration p{
+	color: #b8b6dd;    
+    font-size: 1.1em;
+    line-height: 1.4em;
+    margin-left: 120px;
+    margin-top: 100px;
+    text-align: center;
+    animation: fadein 7s;
+    }
+/***Text fades in***/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#nextbutton{
+    position: absolute; 
+    margin-left: 1000px;
+    margin-top: 470px;
+    }
+#nextbutton img{
+    width: 70px;
+    }
+#nextbutton:hover {
+	opacity: 0.8;
+}
+
+</style>
+
+<script>
+
+    
+var click=0;   
+    
+function sequence1() {
+	click++;
+    if (click == 1) {
+	document.getElementById("text1").innerHTML= "This is my chance! I'm going to get out of here! No matter how persuasive he is, I still want out!";  
+  document.getElementById('nextbutton').style.display = 'block';}
+
+}  
+</script>
+</head>
+    
+<body>
+<!-- Narration-->
+    <div id="narration">
+        <img src="img/textbox.png" alt="textbox">
+        
+			<p id="text1" onclick="sequence1();">
+            All of a sudden, the lights go out.
+			</p>
+		
+    </div>
+	<div id="nextbutton" style="display:none">
+        <a href= "hallwayfromceo.html"><img src="img/right_arrow.png" alt="next button"> </a>
+    </div>
+	<audio autoplay loop>
+		<source src="audio/fantasia2.mp3" type="audio/mp3">
+	</audio>	
+</body>       
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

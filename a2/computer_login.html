@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+
+<title>Exec Room</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body{
+    }
+.backgroundimg{
+    width: 1280px;
+    height: 800px;
+    margin-left: -8px;
+    margin-top: -8px;
+    }
+.loginbuttons{
+    position: absolute;
+    width: 200px;
+    height: 25px;
+    background-color: #b7b7b7;
+    margin-top:-490px;
+    margin-left: 530px;
+    border-radius: 5px;
+    }  
+.loginbuttons p {
+    font-size: 0.8em;
+    padding-left: 10px;
+    margin-top:6px;
+    }
+    
+.loginbuttons:hover { 
+    background-color:#96a7a8;
+    cursor: pointer;
+    }   
+    
+</style>
+</head>
+<body>
+	<img class="backgroundimg" src="img/computer_login.png" alt="computer background image">
+	<a>
+		<div class="loginbuttons" id="prompt" onclick="myFunction()">
+			<p>enter password</p>
+		</div>
+	</a>
+	<p id="demo"></p>
+	<audio autoplay loop>
+		<source src="audio/fatal1.mp3" type="audio/mp3">
+	</audio>
+</body> 
+    
+<script>
+function myFunction(){
+var theansweris42 = prompt("ENTER THE PASSWORD");
+
+var reply2answer = "";
+
+if (theansweris42 == "1212") {
+  		reply2answer = "Welcome. You have been warned...";
+        location.href = ("computer_logged.html");	
+  		}
+  	else if (theansweris42 == null) {
+  		reply2answer = "Try again";
+  	}
+    else if (thenasweris42 !== "password") {
+        reply2answer = "Try again";
+    }
+	alert(reply2answer);
+}
+</script>
+</html>
+

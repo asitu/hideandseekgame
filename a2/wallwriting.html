@@ -1,0 +1,171 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+
+<title>Cryptic Writing</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+#canvas{
+    position: absolute;
+    background:url(img/bloodywriting.png);
+    height: 800px;
+    background-repeat: no-repeat;
+    margin:0;
+    margin-left:-8px;
+    margin-top:-8px;
+    
+    }
+.info{
+    position: absolute;
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 20px;
+    z-index: 1
+    }
+.nextbutton{
+    position: absolute; 
+    margin-left: 1180px;
+    margin-top: 700px;
+    z-index: 1
+    }
+.nextbutton img{
+    width: 70px;
+    opacity: 0.5 
+    }
+a:hover {
+    opacity: 0.8    
+    }
+#narration {
+    position: absolute;
+    color: #b8b6dd;    
+    font-size: 1.1em;
+    line-height: 1.6em;
+    margin-left: 780px;
+    margin-top: 720px;
+    z-index: 1
+    }
+</style>
+</head>
+<body onload="instructions()">
+    <div class="info">
+        <p>Alden Stone General Hospital</p>
+        <p>Mysterious Wall</p>
+    </div>
+<!--erase to reveal image-->
+   <div id="canvas"></div>
+<!--div for text that changes automatically every few seconds-->
+ <div id="narration"></div>
+ 
+
+   
+   
+<script>
+  
+var text = ["Eurgh... There's something on the wall...", "What is this...?", "I better write this down...<br> It could be important..."];
+var counter = 0;
+var elem = document.getElementById("narration");
+var iterations = 0;
+var interval = setInterval(change, 2500);
+
+
+function change() {
+	elem.innerHTML = text[counter];
+	counter++;
+	
+	if (counter >= text.length) {
+    counter = 0;
+    
+    iterations++;
+    if (iterations == 1)
+    clearInterval( interval);
+}
+}
+
+(function() {
+// Creates a new canvas element and appends it as a child
+// to the parent element, and returns the reference to
+// the newly created canvas element
+
+
+function createCanvas(parent, width, height) {
+var canvas = {};
+canvas.node = document.createElement('canvas');
+canvas.context = canvas.node.getContext('2d');
+canvas.node.width = width || 100;
+canvas.node.height = height || 100;
+parent.appendChild(canvas.node);
+return canvas;
+}
+
+function init(container, width, height, fillColor) {
+var canvas = createCanvas(container, width, height);
+var ctx = canvas.context;
+// define a custom fillCircle method
+ctx.fillCircle = function(x, y, radius, fillColor) {
+  this.fillStyle = fillColor;
+  this.beginPath();
+  this.moveTo(x, y);
+  this.arc(x, y, radius, 0, Math.PI * 2, false);
+  this.fill();
+};
+ctx.clearTo = function(fillColor) {
+  ctx.fillStyle = fillColor;
+  ctx.fillRect(0, 0, width, height);
+};
+ctx.clearTo(fillColor || "#000");
+
+// bind mouse events
+canvas.node.onmousemove = function(e) {
+  if (!canvas.isDrawing) {
+    return;
+  }
+  var x = e.pageX - this.offsetLeft;
+  var y = e.pageY - this.offsetTop;
+  var radius = 50; // or whatever
+  var fillColor = '#ff0000';
+  ctx.globalCompositeOperation = 'destination-out';
+  ctx.fillCircle(x, y, radius, fillColor);
+};
+canvas.node.onmousedown = function(e) {
+  canvas.isDrawing = true;
+};
+canvas.node.onmouseup = function(e) {
+  canvas.isDrawing = false;
+};
+}
+
+var container = document.getElementById('canvas');
+init(container, 1280, 800, '#101413');
+
+})();
+    
+    
+    
+function instructions() {
+    alert("Uncover something on the wall by clicking and dragging your mouse");
+}
+</script>
+
+    <div class="nextbutton">
+		<a href="receptionist2.html">
+			<div id="wallprompt">
+				<img src="img/right_arrow.png" alt="next button">
+			</div>
+		</a>
+    </div>
+	<audio autoplay loop>
+		<source src="audio/bittersweet1.mp3" type="audio/mp3">
+	</audio>
+
+</body>
+</html>
+
+<!-- credit javascript code: https://stackoverflow.com/questions/39061261/how-do-i-erase-image-with-cursor-to-reveal-another-image-->
+<!-- credit for iterations javascript: https://stackoverflow.com/questions/11676331/how-to-limit-the-number-of-iterations-done-by-setinterval-->

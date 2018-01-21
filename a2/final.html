@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<title>The End</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body {
+    width: 1280px;
+    background-repeat: no-repeat;
+    background-image:url(img/index.png);
+    background-size: 1280px 800px;
+    }
+.info{
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 40px;
+    }
+    
+  a:link{
+    text-decoration: none;
+  } 
+#narration{
+    width: 1000px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 70px;
+    } 
+#narration img{
+    position: absolute;
+    width: 1000px;
+    margin-left: 50px;
+    z-index: -1;
+    }
+#narration p{
+	color: #b8b6dd;    
+    font-size: 1.1em;
+    line-height: 1.4em;
+    margin-left: 120px;
+    margin-top: 100px;
+    text-align: center;
+    animation: fadein 7s;
+    }
+/***Text fades in***/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#nextbutton{
+    position: absolute; 
+    margin-left: 1000px;
+    margin-top: 470px;
+    }
+#nextbutton img{
+    width: 70px;
+    }
+#nextbutton:hover {
+	opacity: 0.8;
+}
+
+</style>
+
+<script>
+
+    
+var click=0;   
+    
+function sequence1() {
+	click++;
+    if (click == 1) {
+	document.getElementById("text1").innerHTML= " I never see my friends again - and after the images on the computer, I think I know what happened to them... I think about their family and also their grief...";}
+  
+  
+   if (click == 2) {
+	document.getElementById("text1").innerHTML= " I have all this information on me... And despite what I said, I don't know what to do with it...";}
+  
+   if (click == 3) {
+	document.getElementById("text1").innerHTML= " What to do... What to do...........";
+  document.getElementById('nextbutton').style.display = 'block';}
+
+};   
+</script>
+</head>
+<body>
+    <div class="info">
+        <p>Alden Stone General Hospital</p>
+        <p>December 19, 2019</p>
+    </div>
+<!-- Narration-->
+    <div id="narration">
+        <img src="img/textbox.png" alt="textbox">
+        <a href="#">
+			<p id="text1" onclick="sequence1()">
+            I run as fast as I can through the hallways and out the doors. I don't look back - if I did, I probably wouldn't be alive anymore. 
+			</p>
+		</a>
+    </div>
+	<div id="nextbutton" style="display:none">
+        <a href= "statement.html"><img src="img/right_arrow.png" alt="next button"> </a>
+    </div>
+	<audio autoplay loop>
+		<source src="audio/stronger1.mp3" type="audio/mp3">
+	</audio>
+    
+</body>       
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

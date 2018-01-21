@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<title>Office</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body {
+    background-repeat: no-repeat;
+    background-image:url(img/office.png);
+    background-size: 1280px 800px;
+    }
+.info{
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 40px;
+    }
+#narration{
+    position: absolute;
+    margin-top: 345px;
+    margin-left:20px;    
+    }
+#narration img {
+    position: absolute;
+    z-index:1;
+    width: 1000px;
+    height: 190px;
+    margin-top: 160px;
+
+    }
+#narration p{
+    position: absolute;
+    color: #b8b6dd;    
+    font-size: 1.1em;
+    line-height: 1.6em;
+    animation: fadein 7s;
+    width: 830px;
+    padding-left: 90px;
+    margin-top: 220px;
+    z-index: 1;
+    text-align: left;
+    }
+    
+#pic1{
+    position: absolute;
+    top: 350px;
+    height: 500px;
+    left: 100px;
+    z-index: 0;
+}
+
+/***Text fades in***/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeinnext {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#nextbutton{
+     position: absolute; 
+    margin-left: 1050px;
+    margin-top: 595px;
+    }
+#nextbutton img{
+    width: 70px;
+    }
+#nextbutton:hover {
+	opacity: 0.8;
+}  
+
+</style>
+
+<script>
+
+    
+var click=0;   
+    
+function sequence1() {
+	click++;
+    if (click == 1) {
+	document.getElementById("text1").innerHTML= " Strangely enough, the floors aren’t guarded and the room wasn’t locked. I’m almost too lucky.";
+  }
+  
+  if (click == 2) {
+	document.getElementById("text1").innerHTML= "I shake the mouse a little and the screen comes to life"; 
+    document.getElementById('nextbutton').style.display = 'block';}
+
+}   
+</script>
+</head>
+<body>
+    <div class="info">
+        <p>CEO Office</p>
+    </div>
+<!-- Narration-->
+    <div id="narration">
+        <img src="img/textbox_dark.png" alt="textbox">
+     <p id="text1" onclick="sequence1();">
+			The room is dark except for a lit monitor on the desk. <br><br>
+        </p>
+    </div>
+	<div id="nextbutton" style="display:none">
+        <a href= "computer_login.html"><img src="img/right_arrow.png" alt="next button"></a>
+    </div>
+	<audio autoplay loop>
+		<source src="audio/fatal1.mp3" type="audio/mp3">
+	</audio>
+</body>       
+</html>

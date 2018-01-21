@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+
+<title>Emergency Ward</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body {
+    background-repeat: no-repeat;
+    background-image:url(img/emergencyward.png);
+    background-size: 1280px 800px;
+    }
+.info{
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 40px;
+    }
+#wall1{
+    position: absolute;
+    margin-left: 375px;
+    margin-top: 175px;
+    width: 83px;
+    }
+#wall2{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: 70px;
+    width: 178px;
+    height: 410px;
+    }
+#wall3{
+    position: absolute;
+    margin-left: 1005px; 
+    margin-top: 128px;
+    width: 210px;
+    height: 295px;
+    }
+#wall1:hover{
+    transform: scale(1.1);  
+    }
+#wall2:hover{
+    transform: scale(1.1);   
+    }
+#wall3:hover{
+    transform: scale(1.1);  
+    }
+.narration{
+    position: absolute;
+    margin-top: 320px;
+    margin-left:20px;    
+    }
+.narration img {
+    position: absolute;
+    z-index:1;
+    width: 1000px;
+    height: 190px;
+    margin-top: 160px;
+    }
+.narration p{
+    position: absolute;
+    color: #b8b6dd;    
+    font-size: 1.1em;
+    line-height: 1.6em;
+    animation: fadein 7s;
+    width: 830px;
+    padding-left: 90px;
+    margin-top: 220px;
+    text-align: left;
+    z-index: 1
+    }
+#pic1 img{
+    position: absolute;
+    top: 250px;
+    height: 500px;
+    left: 100px;
+    z-index: 0;
+}
+</style>
+</head>
+<body>
+    <div class="info">
+        <p>Alden Stone General Hospital</p>
+        <p>Emergency Ward</p>
+    </div>
+    <div class="choosewalls">
+        <a href="#" onclick="myFunction()"><img id="wall1" src="img/wall-02.png" alt="wall1"></a>
+        <a href="#" onclick="myFunction()"><img id="wall2" src="img/wall-03.png" alt="wall2"> </a>
+        <a href="wallwriting.html"><img id="wall3" src="img/wall-04.png" alt="wall3"></a>
+    </div>
+ <!--narration-->
+    <div class="narration">
+        <img src="img/textbox_dark.png" alt="textbox">
+        <p>Something is off here.. Am I seeing things or is this the wall with the suspicious writing...
+        </p>
+    </div>
+    <p id="pic1" onclick="sequence1();"> <img src="img/main_character_hmm.png" alt="mainchar"/>
+	<audio autoplay loop>
+		<source src="audio/lullaby1.mp3" type="audio/mp3">
+	</audio>
+<!--JS POP UP BOX -->
+<script>
+function myFunction() {
+    alert("There is nothing here.");
+}
+</script>
+</body>
+</html>
+<!--JS: click the walls- prompt that says its the wrong one or try again? -->

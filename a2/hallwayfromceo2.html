@@ -1,0 +1,190 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<title>Hallway</title>
+
+<!--CSS Style-->
+<style>
+html{
+    width: 1280px;
+    font-family: 'Comfortaa', cursive;
+    }
+body {
+    background-image: url(img/hallway-06.png);
+    background-size: 1280px 800px;
+    background-repeat: no-repeat; 
+    }
+.info{
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 40px;
+    }
+    
+.narration{
+    position: absolute;
+    margin-top: 347px;
+    margin-left:20px;    
+    }
+.narration img {
+    position: absolute;
+    z-index:1;
+    width: 1000px;
+    height: 190px;
+    margin-top: 160px;
+
+    }
+.narration p{
+    position: absolute;
+    color: #b8b6dd;    
+    font-size: 1.1em;
+    line-height: 1.6em;
+    animation: fadein 7s;
+    width: 830px;
+    padding-left: 90px;
+    margin-top: 220px;
+    text-align: left;
+    z-index: 1
+    }
+    
+#pic1{
+    position: absolute;
+    top: 270px;
+    height: 500px;
+    left: 100px;
+    z-index: 0;
+}
+
+
+/***Text fades in***/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeinnext {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#nextbutton{
+     position: absolute; 
+    margin-left: 1050px;
+    margin-top: 780px;
+    }
+#nextbutton img{
+    width: 70px;
+    }
+    
+a:hover {
+    opacity: 1    
+    }
+    
+#finalboss img{
+    position: absolute;
+    margin-left: 800px;
+    margin-top:60px;
+    height: 500px; 
+}
+
+#exit{
+	position: absolute;
+	left: 250px;
+	top: 20px;
+	height: 20px;
+	opacity: 0;	
+}
+    #pic1 img {
+        height: 500px
+    }
+    #exitimage:hover {
+        transform: scale(2)
+    }
+    
+</style>
+
+<script>
+var click=0;
+
+function sequence1() {
+	click++;
+
+    if (click == 1) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_!.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br><b> !!! </b>";}
+
+    if (click == 2) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_ugh.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>Something is coming!";}
+    
+	if (click == 3) {
+      document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_!.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>Oh no! It's Dr. Hannibal!";}
+    
+    if (click == 4) {
+      document.getElementById("pic1").style.display= 'none';
+document.getElementById("text1").innerHTML= "Click on Dr. Hannibal to defeat him!";
+    document.getElementById("finalboss").style.display= 'block';}
+    
+}
+
+var click1=0;
+function sequence2() {
+    click1++;
+    
+    if(click1 <=14) {
+     document.getElementById("finalboss").style.display= 'block';}
+     
+    else if(click1 >=15) {
+   document.getElementById("finalboss").style.display= 'none';
+   document.getElementById("text1").innerHTML= "He's down! Time to run for it!";
+	document.getElementById("exit").style.display='block';}
+    
+}
+
+
+
+</script>
+</head>
+<body>
+	<div class="info">
+        <p>Dark Hallway</p>
+    </div>
+    <div class="narration" onclick="sequence1();">
+		<img src="img/textbox_dark.png" alt="textbox" style="display:block">
+		<p id="text1"> I'm so close to the exit! I just need to pass through that corridor and then I'll be safe!
+		</p>
+	</div>
+	<div id="nextbutton" style="display:none">
+        <a href= "emergencyward.html"><img src="img/right_arrow.png" alt="next button"> </a>
+	</div>
+	
+	<p id="exit" style="display:none; height: 500px">
+		<a href="final.html"><img src="img/nurse.png" alt="nurse"></a>
+	</p>
+    
+    
+	<p id="finalboss" onclick="sequence2();" style="display:none">
+	<img src="img/ceoEDIT.png" alt="next button">
+	</p>
+    
+		<p id="pic1">
+			<img src="img/main_character_ugh.png" style="display: block; height: 500px" alt="main char" />
+		</p>
+      
+	<audio autoplay loop>
+		<source src="audio/#.mp3" type="audio/mp3">
+	</audio>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

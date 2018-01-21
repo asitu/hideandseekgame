@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+
+<title>Office</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body {
+    background-repeat: no-repeat;
+    background-image:url(img/office.png);
+    background-size: 1280px 800px;
+    overflow: hidden;
+    z-index: -3;
+    }
+.info{
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 40px;
+    }
+.narration{
+    position: absolute;
+    margin-top: 345px;
+    margin-left:20px;    
+    }    
+    
+
+.narration img {
+   position: absolute;
+   width: 1000px;
+    height: 190px;
+    margin-top: 160px;
+    z-index: -1;
+    }
+    
+    
+.narration p{
+   color: #b8b6dd;    
+   font-size: 1.1em;
+    line-height: 1.6em;
+    animation: fadein 7s;
+    width: 830px;
+    padding-left: 90px;
+    margin-top: 220px;
+    z-index: 1;
+    text-align: left;
+    animation: fadein 7s;
+    }
+    
+#nextbutton{
+     position: absolute; 
+    margin-left: 1050px;
+    margin-top: 600px;
+    }
+#nextbutton img{
+    width: 70px;
+    }
+    
+#pic1{
+    position: absolute;
+    top: 270px;
+    height: 500px;
+    left: 100px;
+    z-index: -2;
+}
+</style>
+</head>
+<body>
+    <div class="info">
+		<p>CEO Office</p>
+    </div>
+ <!--narration-->
+	<div class="narration">
+		<img src="img/textbox_dark.png" alt="textbox">
+		<p id="text1" onclick="sequence1();" >Oh my goodness! What kind of sick experimentation is this!?
+		</p>
+	</div>
+	<div id="nextbutton" style="display:none">
+        <a href= "choice.html"><img src="img/right_arrow.png" alt="next button"></a>
+	</div>
+	
+		<p id="pic1">
+			<img src="img/main_character_angry.png"  height="500px" alt="" />
+		</p>
+	
+	<audio autoplay loop>
+		<source src="audio/misconception1.mp3" type="audio/mp3">
+	</audio>
+
+<script> 
+var click = 0;
+
+function sequence1() {
+	click++;
+    if (click == 1) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_!.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "<b>*CLICK*</b>";}
+
+    if (click == 2) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "???:<br>Hello there, I heard from the head nurse about a visitor.";}
+
+    if (click == 3) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_angry.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>...YOU...!";}
+    
+    if (click == 4) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_angry.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>...who exactly are you?";}
+    
+	if (click == 5) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Dr. Hannibal:<br>I'm Dr. Hannibal, the director of this hospital.";}
+    
+	if (click == 6) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_angry.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>Then you're responsible for the grotesque images I saw on the computer.";}
+    
+    if (click == 7) {
+	document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Dr. Hannibal:<br>Now you're being too harsh. Let us talk it out like adults. By the end of it, you'll see that I'm not a bad person.";}
+    
+	if (click == 8) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_hmm.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>I'm listening.";}
+    
+	if (click == 9) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Dr. Hannibal:<br><b>Firstly, I'm not doing anything against the law.</b>";}
+
+    if (click == 10) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Dr. Hannibal:<br>I'm only doing what the government wants me to do. Everything is supervised by officials so it would be in your best interest to keep it under wraps.";}
+
+	if (click == 11) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Dr. Hannibal:<br>In order for mankind to fully understand the mysteries of the human body, we need to make 'honourable' sacrifices.";}
+	
+	if (click == 12) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Dr. Hannibal:<br>We're doing our best for humanity's advancement. Alden Stone is a well renowned hospital and we wouldn't want an uproar. This is why we're keeping it secret from the public eye.";}
+    
+	if (click == 13) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_hmm.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>...";}
+    
+	if (click == 14) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/ceoEDIT.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Dr. Hannibal:<br>I would love to inform the masses, but it is for their peace of mind that we maintain our silence. Will you agree to keep quiet about it? I can compensate you if you'd like...";}
+    
+	if (click == 15) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character_hmm.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br><b>*What should I do?*</b>";
+	document.getElementById('nextbutton').style.display = 'block';}
+}
+</script>
+</body>
+</html>

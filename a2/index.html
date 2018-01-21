@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<title>Index Start</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body {
+    background-repeat: no-repeat;
+    background-image:url(img/index.png);
+    background-size: 1280px 800px;
+    }
+.title{
+    position: absolute;
+    color: #b5b5b5;
+    margin-top: 200px;
+    margin-left: 420px;
+    text-align: center;
+    }
+h1{  
+    font-size: 3em;
+    }
+h2{
+    font-size: 1em;
+    margin-top: 60px;
+    }
+    
+.buttons{  
+    position: absolute;
+     margin-top: 475px;
+     text-align: center;
+     margin-left: 480px;
+    } 
+#playbutton img{
+    width: 140px; 
+    margin-bottom: 30px;
+    }
+#statementgo img{
+     width: 240px;    
+    }
+#button1:hover{
+    transform: scale(1.1);    
+    } 
+#button2:hover{
+    transform: scale(1.1);    
+    }   
+#license{
+    position: absolute;
+    color: #b5b5b5;
+    margin-top: 690px;
+    margin-left: 200px;
+    text-align: center;
+    }
+</style>
+</head>
+<body>
+	<div class="title">
+		<h1>Hide and Seek</h1>
+		<h2>Are you able to keep this a secret? </h2>
+    </div>  
+<!-- buttons -->
+    <div class="buttons">
+        <div id="playbutton">
+            <a href="username.html"><img id="button1" src="img/playbutton.png" alt="playbutton"></a>
+        </div>
+        <div id="statementgo">
+           <a href="statement.html"><img id="button2" src="img/statement_button.png" alt="statement button"></a>
+        </div>
+    </div>
+	<div>
+		<p id='result'></p>
+	</div>
+	<audio autoplay loop>
+		<source src="audio/fantasia1.mp3" type="audio/mp3">
+	</audio>
+	<div id="license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+		<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+	</a>
+	<br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+	</div>
+</body>
+ 
+</html>
+
+<!--Sources: 
+http://mediad.publicbroadcasting.net/p/michigan/files/201502/jail.jpg -->

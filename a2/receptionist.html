@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<title>Receptionist</title>
+
+<!--CSS Style-->
+<style>
+html{
+    font-family: 'Comfortaa', cursive;
+    }
+body{
+    background-size: 1280px 800px;
+    background-image: url(img/receptionist.png);
+    background-repeat: no-repeat;
+    }
+.info{
+    position: absolute;
+    color: #796c9e;    
+    font-size: 0.96em;
+    line-height: 0.6em;
+    margin: 20px;
+    z-index: 1
+    }
+.narration{
+    position: absolute;
+    margin-top: 425px;
+    margin-left:20px;    
+    }
+.narration img {
+    position: absolute;
+    z-index:1;
+    width: 1000px;
+    height: 190px;
+    margin-top: 160px;
+
+    }
+.narration p{
+    position: absolute;
+    color: #b8b6dd;    
+    font-size: 1.1em;
+    line-height: 1.6em;
+    animation: fadein 7s;
+    width: 830px;
+    padding-left: 90px;
+    margin-top: 220px;
+    z-index: 1;
+    text-align: left;
+    }
+    
+#pic1{
+    position: absolute;
+    top: 250px;
+    height: 500px;
+    left: 100px;
+    z-index: 0;
+}
+
+/***Text fades in***/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeinnext {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+#nextbutton{
+     position: absolute; 
+    margin-left: 1050px;
+    margin-top: 680px;
+    }
+#nextbutton img{
+    width: 70px;
+    }
+    
+a:hover {
+    opacity: 1    
+    } 
+#mainchar {
+      height: 500px;  
+    }
+    
+</style>
+
+<script>
+var click=0;
+
+function sequence1() {
+	click++;
+    if (click == 1) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>Hello, I'm looking for a Brian... Could you direct me to his room?";}
+
+    if (click == 2) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/nurse.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Receptionist:<br>... :)";}
+
+    if (click == 3) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/main_character.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= document.cookie + ":<br>...Hello...?";}
+    
+	if (click == 4) {
+    document.getElementById("pic1").innerHTML= "<img src=\"img/nurse.png\"  height=\"500\" alt=\"\" />";
+	document.getElementById("text1").innerHTML= "Receptionist:<br>Try the room with the suspicious writing down the hallway!";	
+    document.getElementById('nextbutton').style.display = 'block';}
+}
+
+var x = document.cookie;
+
+
+</script>
+</head>
+<body>
+	<div class="info">
+        <p>Alden Stone General Hospital</p>
+        <p>Receptionist</p>
+    </div>
+    <div class="narration" onclick="sequence1();">
+		<img src="img/textbox_dark.png" alt="textbox">
+		<p id="text1"> The waiting area is perfectly empty with no one in sight. The only presence of life is the receptionist by the counter, but she gives off this awful vibe of her own. I shiver as I approach her.
+		</p>
+	</div>
+	<div id="nextbutton" style="display:none">
+        <a href= "emergencyward.html"><img src="img/right_arrow.png" alt="next button"></a>
+	</div>
+		<p id="pic1">
+			<img id="mainchar" src="img/main_character.png" alt="main character">
+		</p>
+	<audio autoplay loop>
+		<source src="audio/lullaby1.mp3" type="audio/mp3">
+	</audio>
+</body>
+</html>
+
+<!-- -->
